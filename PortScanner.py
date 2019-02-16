@@ -37,12 +37,15 @@ def port_scan(ip):
 This main method will print the information created by the methods
 """
 def main():
-    input = raw_input("Enter a url: ")
+    user_input = input("Enter a url: ")
+    domain = get_domain_name(user_input)
+    ip = get_ip_address(user_input)
+    ports = port_scan(get_ip_address(user_input))
 
-    print("URL: " + input + " \n" +
-          "Domain Name: " + get_domain_name(input) + " \n" +
-          "IP Address: " + get_ip_address(input) + " \n" +
-          "Open Ports: " + port_scan(get_ip_address(input)) + " \n")
+    print("URL: " + website + " \n" +
+          "Domain Name: " + domain + " \n" +
+          "IP Address: " + ip + " \n" +
+          "Open Ports: " + ports + " \n")
 
 #Calls the main method and runs the program
 main()
